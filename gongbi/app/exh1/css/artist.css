@@ -1,0 +1,171 @@
+body{
+	font-family: 'Heiti SC', '微软雅黑';
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+}
+section{
+	overflow: hidden;
+}
+section.main{
+	display: none;
+}
+section.loading{
+	width: 100%;
+	padding-top: 40%;
+	text-align: center;
+	display: block;
+}
+.fbn{
+	color: #fff;
+	font-size: 0.8em;
+	float: left;
+	text-align: center;
+	background-color: #2a2a2a;
+}
+.focus{
+	background-color: #a54864;
+}
+.main .artist .topbar{
+	width: 100%;
+	position: relative;
+}
+.main .artist .topbar .backframe{
+	float: left;
+	width: 6%;
+	margin-left: 2%;
+}
+.main .artist .topbar .backframe img.back{
+	width: 100%;
+	vertical-align: middle;
+}
+.main .artist .topbar .content{
+	width: 62%;
+	color: #fff;
+	float: left;
+	position: relative;
+	margin-left: 4%;
+	overflow: hidden;
+}
+.main .artist .topbar .content .name{
+	font-size: 1.1em;
+}
+.main .artist .topbar .content .title{
+	position: absolute;
+	width: 100%;
+}
+.main .artist .topbar .content textarea{
+	overflow: hidden;
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
+}
+.main .artist .topbar .content .name span, .main .artist .topbar .content .title span{
+	background-color: rgba(0,0,0,0.2);
+	padding: 2px;
+}
+.main .artist .topbar .icon{
+	width: 20%;
+	margin: 2%;
+	border-radius: 2px;
+	float: right;
+	display: none;
+}
+.main .artist .topbar .tabbar{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20%;
+	line-height: 20%;
+	display: table;
+}
+.main .artist .topbar .tabbar .tab{
+	width: 24%;
+	height: 100%;
+    margin-right: 1%;
+	float: left;
+	font-size: 0.8em;
+    background-color: rgba(255, 255, 255, 0.26);
+	text-align: center;
+	text-indent: -1.5em;
+}
+.main .artist .topbar .tabbar .tab.last{
+	width: 25%;
+	margin-right: 0;
+}
+.main .artist .topbar .tabbar .tab img{
+	height: 12px;
+	margin-left: 10%;
+	vertical-align: middle;
+}
+.main .artist .topbar .tabbar .tab.focus{
+	background-color: #eee;
+}
+img.icon{
+	vertical-align: bottom;
+}
+.main .artist .content, .main .artist .content section{
+	overflow: auto;
+}
+.main .artist .content section.resume{
+	font-size: 0.9em;
+	padding: 6px;
+	height: 100%;
+    line-height: 1.6em;
+}
+.main .artist .content section.workses{
+	width: 100%;
+	padding-top: 5px;
+	text-align: center;
+}
+.main .artist .content section.workses .works .frame{
+	width: 96%;
+	margin-left: 2%;
+	background-color: rgba(189, 189, 189, 0.3);
+}
+.main .artist .content section.workses .works img{
+	vertical-align: bottom;
+}
+.main .artist .content section.workses .works .desc{
+	font-size: 0.6em;
+	margin-top: 8px;
+    margin-bottom: 12px;
+}
+.main .artist .content section.articles .article, .main .artist .content section.comments .comment{
+	width: 96%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 1%;
+	margin: 1%;
+	display: table;
+	background-color: #fff;
+}
+.main .artist .content section.articles,
+.main .artist .content section.comments{
+	padding-top: 4px;
+}
+.main .artist .content section.articles .article .icon,
+.main .artist .content section.comments .comment .icon{
+	float: left;
+    margin-right: 6px;
+    width: 18%;
+}
+.main .artist .content section.articles .article .title,
+.main .artist .content section.comments .comment .title{
+	font-size: 1em;
+	margin-top: 4px;
+}
+.main .artist .content section.articles .article .date,
+.main .artist .content section.comments .comment .date,
+.main .artist .content section.comments .comment .author{
+	float: right;
+	font-size: 0.8em;
+	margin-top: 4px;
+	margin-right: 6px;
+	color: #444;
+}
+.main .artist .content section.comments .comment .author{
+	margin-right: 1em;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "gongbi",
+  "version": "0.0.1",
+  "authors": [
+    "joyjones <joyjones3d@gmail.com>"
+  ],
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "gongbi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "angular": "~1.4.0"
+  }
+}

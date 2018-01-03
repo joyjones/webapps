@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="exhapp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>中国艺术研究院工笔画精品展</title>
+
+		<link rel="stylesheet" type="text/css" href="css/artist.css?20160101bf">
+		<script type="text/javascript">var _czc = _czc || [];_czc.push(["_setAccount", "1257141315"]);</script>
+	</head>
+	<body ng-controller="EnvController as env">
+		<section class="loading" ng-show="!global.dataReady">
+			<div>加载中……</div>
+		</section>
+		<section class="main" display-root ng-show="global.dataReady">
+			<section class="artist" ng-style="{height:global.screen().height+'px'}">
+				<div class="topbar" ng-style="{
+					'background-image': 'url(img/artistbk/'+env.artist.id+'.jpg?v=1)',
+					'background-repeat': 'no-repeat',
+					'background-size': '100%',
+					'height': env.headerHeight() + 'px'
+				}">
+					<div class="backframe" ng-style="{
+						'height': env.headerHeight() * 0.75 + 'px',
+						'line-height': env.headerHeight() * 0.75 + 'px',
+					}">
+						<img class="back" src="img/back.png" ng-click="env.clickBack()">
+					</div>
+					<div class="content" ng-style="{
+						'height': env.headerHeight() * 0.75 + 'px',
+					}">
+						<div class="name" ng-style="{'height': env.headerHeight() * 0.8 + 'px','line-height': env.headerHeight() * 0.8 + 'px'}">
+							<span>{{env.artist.name}}</span>
+						</div>
+<!-- 						<div class="title" ng-style="{'height': env.headerHeight() * 0.4 + 'px'}">
+							<textarea rows="2" disabled readonly 
+								ng-model="env.artist.title">
+							</textarea>
+						</div> -->
+					</div>
+					<img class="icon" ng-src="{{global.getImgUrl(env.artist.headimgurl, 0.25)}}">
+					<div class="tabbar" ng-style="{
+						'height': env.headerHeight() * 0.25 + 'px',
+						'line-height': env.headerHeight() * 0.25 + 'px',
+					}">
+						<div class="tab" ng-repeat="txt in ['简介', '作品', '文章', '评论']" ng-class="{'focus':env.focusTab===$index,'last':$index==3}" ng-click="env.focusTab=$index">
+							<img ng-src="img/i_tab{{$index+1}}{{env.focusTab===$index?'_p':''}}.png">
+							<span>{{txt}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="content" ng-style="{height: env.contentHeight()*0.98+'px'}">
+					<section class="resume" ng-show="env.focusTab===0">
+						<artist-resume></artist-resume>
+					</section>
+					<section class="workses" ng-show="env.focusTab===1">
+<!-- 						<div class="kind" ng-repeat="k in env.kinds">
+							{{k.name}}
+						</div> -->
+						<div class="works" ng-repeat="wk in env.artist.workses">
+							<div class="frame">
+								<img ng-src="{{global.getImgUrl(wk.url, 1)}}" ng-style="{{env.getWorksStyle(wk)}}">
+							</div>
+							<div class="desc">
+								<span>{{wk.name}}</span>
+								<span>{{env.getWorksSize(wk)}}</span>
+								<span>{{wk.material}}</span>
+								<span>{{wk.date}}</span>
+							</div>
+						</div>
+					</section>
+					<section class="articles" ng-show="env.focusTab===2">
+						<div class="article" ng-repeat="a in env.artist.articles | filter:{type:'0'}" ng-click="env.selectArticle(a)">
+							<img class="icon" src="img/i_article.png" alt="" width="25%">
+							<div class="title">{{a.title}}</div>
+							<div class="date">{{a.date}}</div>
+						</div>
+					</section>
+					<section class="comments" ng-show="env.focusTab===3">
+						<div class="comment" ng-repeat="a in env.artist.articles | filter:{type:'1'}" ng-click="env.selectArticle(a)">
+							<img class="icon" src="img/i_article.png" alt="" width="25%">
+							<div class="title">{{a.title}}</div>
+							<div class="date">{{a.date}}</div>
+							<div class="author">{{a.author}}</div>
+						</div>
+					</section>
+				</div>
+			</section>
+		</section>
+		<div style="display:none;">
+			<script src="http://s11.cnzz.com/z_stat.php?id=1257141315&web_id=1257141315" language="JavaScript"></script>
+		</div>
+	</body>
+	<script src="/configs.local.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/dep/jweixin-1.0.0.js"></script>
+	<script src="js/app.js?_dc=c318d9e9"></script>
+	<script src="js/weixin.js?_dc=c318a011"></script>
+	<script src="js/artist.js?_dc=a010e927"></script>
+</html>

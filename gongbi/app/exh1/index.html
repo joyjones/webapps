@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="exhapp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>中国艺术研究院工笔画精品展</title>
+
+		<link rel="stylesheet" type="text/css" href="css/index.css?20160106ff">
+		<script type="text/javascript">var _czc = _czc || [];_czc.push(["_setAccount", "1257141315"]);</script>
+	</head>
+	<body ng-controller="EnvController as env">
+		<section class="loading" ng-show="!global.dataReady">
+			<div>加载中……</div>
+		</section>
+		<section class="welcome" display-root ng-show="env.welcomeVisible" ng-style="{height:global.screen().height+'px'}">
+			<div class="enter" ng-click="env.clickEnter()" 
+			ng-style="{
+				top: global.screen().width*1.00+'px',
+				left: global.screen().width*0.38+'px'
+			}">
+				进入观展 ▶
+			</div>
+		</section>
+		<section class="main" display-root ng-show="!env.welcomeVisible">
+			<img src="img/header.jpg?v=2" width="100%">
+			<section class="face">
+				<section class="about" ng-show="env.tabIndex==0" ng-style="{height:env.getArtistListHeight()-36+'px'}">
+					<img src="img/prev-1.jpg" width="100%">
+					<img src="img/prev-2.jpg" width="100%">
+					<img src="img/prev-3.jpg" width="100%">
+				</section>
+				<section class="artists" ng-show="env.tabIndex==1" ng-style="{height:env.getArtistListHeight()+'px'}">
+					<div class="artist" ng-repeat="a in env.data.artists" ng-click="env.selectArtist(a)">
+						<img class="icon" ng-src="{{global.getImgUrl(a.headimgurl, 0.25)}}" alt="">
+						<div class="name">{{a.name}}</div>
+						<div class="title" ng-repeat="t in env.getSplittedTitles(a.title) track by $index">{{t}}</div>
+					</div>
+				</section>
+				<div class="bottombar">
+					<div class="fbn about" ng-class="{'focus': env.tabIndex==0}" ng-click="env.tabIndex=0">
+						<img src="img/i_about.png">
+						<span>前言</span>
+					</div>
+					<div class="fbn artists" ng-class="{'focus': env.tabIndex==1}" ng-click="env.tabIndex=1">
+						<img src="img/i_artists.png">
+						<span>艺术家</span>
+					</div>
+				</div>
+			</section>
+		</section>
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=55507475" charset="UTF-8"></script>
+		<div style="display:none;">
+			<script src="http://s11.cnzz.com/z_stat.php?id=1257141315&web_id=1257141315" language="JavaScript"></script>
+		</div>
+	</body>
+	<script src="/configs.local.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/dep/jweixin-1.0.0.js"></script>
+	<script src="js/app.js?_dc=c318d9e9"></script>
+	<script src="js/weixin.js?_dc=c318d9ec"></script>
+	<script src="js/index.js?_dc=c318dbck"></script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="exhapp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>中国艺术研究院工笔画精品展</title>
+
+		<link rel="stylesheet" type="text/css" href="css/article.css?2015123000">
+		<script type="text/javascript">var _czc = _czc || [];_czc.push(["_setAccount", "1257141315"]);</script>
+	</head>
+	<body ng-controller="EnvController as env">
+		<section class="loading" ng-show="!global.dataReady">
+			<div>加载中……</div>
+		</section>
+		<section class="main" display-root>
+			<section class="article" ng-style="{height:global.screen().height * 0.98 + 'px', padding: global.screen().height * 0.01 + 'px'}">
+				<div class="head">
+					<div class="topbar">
+						<img class="back" src="img/back.png" ng-click="env.clickBack()">
+						<span>{{env.curArticleBarCaption()}}</span>
+					</div>
+					<div class="title">{{env.article.title}}</div>
+					<div class="author">{{env.article.author}}</div>
+					<div class="date">{{env.article.date}}</div>
+				</div>
+				<div class="body">
+					<artist-article class="content"></artist-article>
+				</div>
+			</section>
+		</section>
+		<div style="display:none;">
+			<script src="http://s11.cnzz.com/z_stat.php?id=1257141315&web_id=1257141315" language="JavaScript"></script>
+		</div>
+	</body>
+	<script src="/configs.local.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/dep/jweixin-1.0.0.js"></script>
+	<script src="js/app.js?_dc=c318d9e9"></script>
+	<script src="js/weixin.js?_dc=c3180001"></script>
+	<script src="js/article.js?_dc=d318a013"></script>
+</html>

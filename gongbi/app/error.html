@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>出错啦</title>
+
+		<style type="text/css">
+			body{
+				font-family: 'Heiti SC', '微软雅黑'
+			}
+			#msg{
+				width: 100%;
+				padding-top: 40%;
+				font-size: 2em;
+				font-weight: bold;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="msg"></div>
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=55507475" charset="UTF-8"></script>
+	</body>
+	<script type="text/javascript"></script>
+	<script type="text/javascript">
+		function GetQueryString(name){
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if (r)
+		     	return unescape(r[2]);
+		     return null;
+		}
+		var msgs = ['请在微信中打开'];
+		$(function(){
+			var code = GetQueryString('code');
+			if (code){
+				$('#msg').html(msgs[code]);
+			}
+		});
+	</script>
+</html>

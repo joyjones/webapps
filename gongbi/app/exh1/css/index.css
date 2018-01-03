@@ -1,0 +1,124 @@
+body{
+	font-family: 'Heiti SC', '微软雅黑';
+	margin: 0;
+	padding: 0;
+	background-color: #E6E2E3;
+}
+section{
+	overflow: auto;
+}
+section.welcome, section.main{
+	display: none;
+	overflow: hidden;
+}
+section.welcome{
+	background-image: url(../img/welcome.jpg?v=3);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+section.welcome .enter{
+    position: absolute;
+    top: 50%;
+    padding: 6px;
+    color: #00a4be;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border: 1px dashed;
+	-webkit-animation-name: scaling;
+	-webkit-animation-duration: 2.5s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+@-webkit-keyframes scaling{
+	0% {opacity: 0.8;}
+	50% {opacity: 0.2;}
+	100% {opacity: 0.8;}
+}
+section.loading{
+	width: 100%;
+	padding-top: 40%;
+	text-align: center;
+	display: block;
+}
+.fbn{
+	color: #fff;
+	font-size: 0.8em;
+	float: left;
+	text-align: center;
+	background-color: #2a2a2a;
+}
+.focus{
+	background-color: #288292;
+}
+.main .face .bottombar{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #ccc;
+}
+.main .face .bottombar .fbn{
+	width: 50%;
+}
+.main .face .bottombar .fbn img{
+	vertical-align: middle;
+}
+.main .face section.about{
+    padding-top: 22px;
+    background-color: #EDEBEC;
+}
+.main .face section.about .prefix{
+	padding: 8px;
+}
+.prefix{
+	font-size: 0.9em;
+}
+.main .face .about .topbar{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #ccc;
+}
+.main .face .about .topbar .fbn{
+	width: 50%;
+}
+.main .face section.artists {
+	/*border-top: 3px solid #BFBFBF;*/
+}
+.main .face section.artists .artist{
+    width: 96%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2%;
+    margin: 2%;
+    display: table;
+    background-color: #fff;
+}
+.main .face section.artists .artist .icon{
+	float: left;
+    margin-right: 10px;
+    width: 25%;
+    border-radius: 15%;
+}
+.main .face section.artists .artist .name{
+	font-size: 1.1em;
+	margin-top: 8px;
+    margin-bottom: 10px;
+    padding-left: 31%;
+}
+.main .face section.artists .artist .title{
+    font-size: 0.7em;
+    color: #7D7D7D;
+    max-height: 3.5em;
+    border-left: 1px solid;
+    padding-left: 8px;
+    overflow: hidden;
+}
+img.icon{
+	vertical-align: bottom;
+}

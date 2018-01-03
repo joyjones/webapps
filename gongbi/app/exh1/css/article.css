@@ -1,0 +1,60 @@
+body{
+	font-family: 'Heiti SC', '微软雅黑';
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+}
+section{
+	overflow: auto;
+}
+section.main{
+	display: none;
+}
+section.loading{
+	width: 100%;
+	padding-top: 40%;
+	text-align: center;
+	display: block;
+}
+.main .article {
+	padding: 6px;
+	overflow: hidden;
+}
+.main .article .head{
+	height: 7em;
+	display: table;
+}
+.main .article .head .topbar{
+	height: 3em;
+	line-height: 3em;
+	margin-bottom: 0.5em;
+}
+.main .article .head .topbar img.back{
+	height: 2em;
+	margin-top: 0.5em;
+	margin-right: 1em;
+	float: left;
+}
+.main .article .head .title{
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 0.8em;
+}
+.main .article .head .author{
+	float: left;
+	margin-right: 1em;
+	font-size: 0.8em;
+	color: #888;
+}
+.main .article .head .date{
+	font-size: 0.8em;
+	color: #888;
+}
+.main .article .body{
+	height: 78%;
+	font-size: 1em;
+	overflow: auto;
+}
+.main .article .body .content{
+	margin-top: 10px;
+}
