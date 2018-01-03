@@ -1,0 +1,25 @@
+.plus{
+	font-weight: bold;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	display: none;
+}
+.plus div{
+	position: absolute;
+	white-space: nowrap;
+}
+img.plus-logo{
+	display: none;
+}
+.plus-logo-top{
+	top: 0;
+	position: absolute;
+	width: 100%;
+}
+.plus-logo-btm{
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+}

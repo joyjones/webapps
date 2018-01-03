@@ -1,0 +1,80 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑;
+	overflow: hidden;
+	background-image: url(../img/1.jpg);
+	background-size: 100%;
+	background-repeat: repeat;
+}
+.bar{
+	padding: 10px;
+}
+.bar .gallery{
+}
+.bar .share{
+	float: right;
+}
+.bar img{
+	vertical-align: bottom;
+}
+.view{
+	position: relative;
+}
+.sharedlg{
+	display: none;
+	position: absolute;
+	top: 40%;
+	width: 64%;
+	left: 18%;
+}
+.sharedlg .text{
+}
+.sharedlg .close{
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
+.view .switch{
+	position: absolute;
+	top: 45%;
+	width: 10%;
+	-webkit-animation-name: flashing;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+.view .switch.prev{
+	left: 6px;
+}
+.view .switch.next{
+	right: 6px;
+}
+@-webkit-keyframes flashing{
+	0% {opacity: 0;}
+	50% {opacity: 0.8;}
+	100% {opacity: 0;}
+}
+.bar .share{
+	display: none;
+}
+.bar .tmall{
+	float: right;
+	width: 24%;
+	display: none;
+}
+.bar .praise{
+	float: right;
+	margin-left: 12px;
+	text-align: center;
+	color: #fff;
+	font-size: 0.7em;
+	width: 0;
+	height: 0;
+	background-image: url(../img/8-praise.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: none;
+}

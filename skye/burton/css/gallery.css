@@ -1,0 +1,27 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-image: url(../img/1.jpg);
+	background-size: 100%;
+	background-repeat: repeat;
+}
+.bar{
+	width: 96%;
+	padding: 2%;
+}
+.bar .home{
+	float: left;
+	width: 10%;
+}
+.bar .tab{
+	width: 75%;
+	margin-left: 3%;
+}
+.view .post{
+	float: left;
+}
+.view .post img{
+}

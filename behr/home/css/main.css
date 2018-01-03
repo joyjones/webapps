@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: '微软雅黑';
+	overflow: hidden;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #2f292b;
+}
+section{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.loading{
+	margin-top: 30%;
+	width: 100%;
+	text-align: center;
+}
+.floatbn{
+	position: absolute;
+}
+.pkimg{
+	padding: 2%;
+	border: 2px solid #dadada;
+}
+.vs{
+	position: absolute;
+	pointer-events: none;
+}
+.selected{
+	border-color: #000;
+	border-style: dashed;
+	border-width: 2px;
+}
+.section-game{
+	background-color: #dadada;
+}
+.section-result{
+	color: #000;
+	background-color: #dadada;
+	padding: 4%;
+}
+.sharetip{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/sharetip.png?v=2);
+	background-size: 100%;
+	display: none;
+}
+.downtip{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/downtip.png);
+	background-size: 100%;
+	display: none;
+}
+.rstimg{
+	text-align: center;
+	border-color: #000;
+	border-width: 2px;
+	border-style: dashed;
+	padding: 5px;
+}
+.themename{
+	position: absolute;
+	top: 0;
+	color: #000;
+	font-weight: bold;
+	background-color: rgba(240, 248, 255, 0.5);
+	padding: 3px;
+}
+.pkimg-bgmask{
+	position: absolute;
+	background-color: #000;
+}
+.vshand{
+	position: absolute;
+	background-image: url(../images/hand1.png);
+	background-size: 100%;
+}
+.masked{
+	opacity: 0.5;
+}
+.selecttip{
+	width: 100%;
+	text-align: center;
+	color: #000;
+	font-size: 1em;
+	margin-top: 10px;
+}
+.roundtitle{
+	width: 100%;
+	height: 25px;
+	text-align: center;
+	color: #000;
+	font-size: 1.2em;
+	font-weight: bold;
+	font-family: 'Arial';
+}

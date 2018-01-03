@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BEHR百色熊斑斓色彩定制家</title>
+
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css?_dc=eeefzadc">
+  <script src="../lib/jquery/jquery-2.1.0.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../lib/ko/knockout-3.2.0.js"></script>
+  <script src="../lib/vmouse.js?_dc=aaaaaaaaa"></script>
+  <script src="../lib/jweixin-1.0.0.js"></script>
+  <script src="../lib/defines.js"></script>
+  <script src="js/app.js?_dc=tidcdcba"></script>
+  <script src="js/data.js?_dc=pckperm"></script>
+  <script src="js/main.js?_dc=eo46ulcd"></script>
+</head>
+<body data-bind="style: {'background-color': evts.bkcolor()}">
+  <section data-bind="visible: vars.step() <= 0">
+  	<div class="loading">加载呢...<span data-bind="text: (vars.loading.index() + 1) + '/' + vars.loading.list.length"></span></div>
+  </section>
+  <section data-bind="visible: vars.step() == 1">
+  	<img data-bind="attr: {
+            						src: 'images/' + vars.step1.srcid() + '.jpg?v=eee'
+          					}, event: {vclick: function(){if(vars.step1.srcid()==1)vars.step1.srcid(2);else vars.setStep(2);}}" width="100%">
+  </section>
+  <section data-bind="visible: vars.step() == 2">
+  	<img src="images/3.jpg?v=d" width="100%">
+  	<div class="floatbn" data-bind="style: {
+                    									width: 195 * vars.scrscale() + 'px', height: 195 * vars.scrscale() + 'px', 
+                    									left: 433 * vars.scrscale() + 'px', top: 152 * vars.scrscale() + 'px'
+                    								}, event: {vclick: function(){vars.room(1);vars.setStep(3);}}"></div>
+  	<div class="floatbn" data-bind="style: {
+                  										width: 195 * vars.scrscale() + 'px', height: 195 * vars.scrscale() + 'px', 
+                  										left: 223 * vars.scrscale() + 'px', top: 363 * vars.scrscale() + 'px' 
+                  									}, event: {vclick: function(){vars.room(2);vars.setStep(3);}}"></div>
+  	<div class="floatbn" data-bind="style: {
+                  										width: 195 * vars.scrscale() + 'px', height: 195 * vars.scrscale() + 'px', 
+                  										left: 15 * vars.scrscale() + 'px', top: 576 * vars.scrscale() + 'px' 
+                  									}, event: {vclick: function(){vars.room(3);vars.setStep(3);}}"></div>
+  	<div class="floatbn" data-bind="style: {
+                  										width: 195 * vars.scrscale() + 'px', height: 195 * vars.scrscale() + 'px', 
+                  										left: 433 * vars.scrscale() + 'px', top: 789 * vars.scrscale() + 'px'
+                  									}, event: {vclick: function(){vars.room(4);vars.setStep(3);}}"></div>
+  </section>
+  <section class="section-game" data-bind="visible: vars.step() == 3, 
+                                           style: {
+                                              'padding-top': vars.vs.sectionMarginTop() + 'px'
+                                           }">
+    <div class="roundtitle" data-bind="text: vars.vs.title"></div>
+  	<div class="pkimg" data-bind="style: {
+                  										'margin-left': vars.vs.rc1().x + 'px',
+                  										'margin-top': vars.vs.rc1().y + 'px',
+                  										'margin-right': vars.vs.rc1().x + 'px',
+                  										'margin-bottom': vars.vs.rc1().y + 'px',
+                  										padding: vars.vs.rc1().pw + 'px'
+                									}, css: {
+                										selected: vars.vs.selectedId() == vars.vs.id1()
+                									}, event: {vclick: evts.choose1}">
+	  	<img data-bind="attr: {
+        	  						src: 'images/'+vars.room()+'/'+vars.vs.id1()+'.jpg?v=c',
+          							width: vars.vs.rc1().iw,
+          							height: vars.vs.rc1().ih,
+          						}">
+      <div class="themename" data-bind="style: {
+                                          'margin-top': (vars.vs.sectionMarginTop() + vars.vs.rc1().y + vars.vs.rc1().pw + 2 + 24) + 'px'
+                                        }, text: vars.room() > 0 ? (data[vars.room()-1][vars.vs.id1()-1].name) : ''">
+      </div>
+      <div class="vshand" data-bind="style: {
+                                        'margin-top': (-1 * vars.vs.rc1().pw - (62 * vars.scrscale())) + 'px',
+                                        right: (vars.vs.rc1().x + vars.vs.rc1().pw * 2) + 'px',
+                                        width: 62 * vars.scrscale() + 'px',
+                                        height: 62 * vars.scrscale() + 'px',
+                                        'background-image': (env.vars.vs.selectedId() == env.vars.vs.id1()) ? 'url(images/hand2.png)' : 'url(images/hand1.png)'
+                                      }">
+      </div>
+  	</div>
+  	<div class="pkimg" data-bind="style: {
+                  										'margin-left': vars.vs.rc2().x + 'px',
+                  										top: vars.vs.rc2().y + 'px',
+                  										'margin-right': vars.vs.rc2().x + 'px',
+                  										padding: vars.vs.rc2().pw + 'px'
+                									}, css: {
+                										selected: vars.vs.selectedId() == vars.vs.id2(),
+                									}, event: {vclick: evts.choose2}">
+	  	<img data-bind="attr: {
+        	  						src: 'images/'+vars.room()+'/'+vars.vs.id2()+'.jpg?v=c',
+          							width: vars.vs.rc2().iw,
+          							height: vars.vs.rc2().ih,
+          						}">
+      <div class="themename" data-bind="style: {
+                                          top: (vars.vs.sectionMarginTop() + vars.vs.rc2().y + vars.vs.rc2().ih - 17 + 24) + 'px'
+                                        }, text: vars.room() > 0 ? (data[vars.room()-1][vars.vs.id2()-1].name) : ''">
+      </div>
+      <div class="vshand" data-bind="style: {
+                                        'margin-top': (-1 * vars.vs.rc1().pw - (62 * vars.scrscale())) + 'px',
+                                        right: (vars.vs.rc1().x + vars.vs.rc1().pw * 2) + 'px',
+                                        width: 62 * vars.scrscale() + 'px',
+                                        height: 62 * vars.scrscale() + 'px',
+                                        'background-image': (env.vars.vs.selectedId() == env.vars.vs.id2()) ? 'url(images/hand2.png)' : 'url(images/hand1.png)'
+                                      }">
+      </div>
+  	</div>
+  	<img class="vs" src="images/vs.png" data-bind="style: {
+                          													left: vars.vs.rc().x + 'px',
+                          													top: (vars.vs.sectionMarginTop() + vars.vs.rc().y) + 'px'
+                          												}, attr: {
+                          													width: vars.vs.rc().w,
+                          													height: vars.vs.rc().h,
+                        						  						}">
+    <div class="selecttip">
+      <p>选择你喜欢的家居风格</p>
+      <img src="images/house.png" width="11.72%">
+    </div>
+  </section>
+  <section data-bind="visible: vars.step() == 4" class="section-result">
+  	<p>最让你心动的BEHR百色熊风格为：</p>
+    <h4 data-bind="text: vars.result.title" style="font-weight:bold;"></h4>
+    <p data-bind="text: vars.result.desc"></p>
+    <div class="rstimg">
+      <img data-bind="attr: {src: vars.result.image}" style="width:85%">
+    </div>
+    <h4 style="font-weight:bold;">BEHR百色熊色号推荐：</h4>
+    <div>
+      <img data-bind="attr: {src: vars.result.adv1}" width="15%">
+      <img data-bind="attr: {src: vars.result.adv2}" width="15%">
+      <img src="images/down.png?v=c" style="float:right;" width="40%" data-bind="event: {vclick: evts.clickDownload}">
+    </div>
+    <div style="text-align:center;">
+      <img src="images/sharewords.png" width="75%">
+    </div>
+    <div class="row" style="margin-top:5px;">
+      <div class="col-xs-6">
+        <img src="images/share.png" style="width:100%;" data-bind="event: {vclick: evts.clickShare}">
+      </div>
+      <div class="col-xs-6">
+        <img src="images/focus.png" style="width:100%;" data-bind="event: {vclick: evts.clickSubscribe}">
+      </div>
+    </div>
+    <div class="sharetip"></div>
+    <div class="downtip"></div>
+  </section>
+</body>
+</html>

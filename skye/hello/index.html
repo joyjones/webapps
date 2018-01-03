@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="helloworld">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>经济学人 全球商业评论</title>
+		<link href="css/main.css?_dc=2dkwwlwo" rel="stylesheet" />
+		<script src="../lib/zepto/zepto.min.js"></script>
+		<script src="../lib/angularjs/angular.min.js"></script>
+  		<script src="../lib/jweixin-1.0.0.js"></script>
+		<script src="js/main.js?_dc=cczkc77c"></script>
+		<style type="text/css">
+			.page-loading{
+				background-color: #fff;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body ng-controller="EnvController as env" resizement ng-style="{height:(configs.scrn.scale*1080)+'px'}">
+		<section class="page-loading" ng-show="env.isLoading">
+			<img src="img/logob.png" style="vertical-align: middle;" width="100%">
+			<img src="img/loading.gif" style="vertical-align: middle;" width="100%">
+		</section>
+		<section class="page-face" ng-show="!configs.appPost && !env.isLoading">
+			<div class="strip">
+				<div class="loading" ng-show="!env.accessable">
+					<span ng-repeat="b in [0,1,2]">{{env.loadingT == b ? '■' : '□'}}</span>
+				</div>
+				<img class="hello" src="img/btn-hello.png" ng-show="env.accessable" ng-click="env.openHello()">
+			</div>
+		</section>
+		<section class="page-speak" ng-show="configs.appPost && (configs.appPost.status==1 || !env.isMyPost()) && !env.isLoading">
+			<div class="context" ng-style="{top: configs.scrn.scale*600+'px'}">
+				<div>Hello，世界！</div>
+				<div>Hello，
+					<input ng-if="env.isMyPost()" id="words" class="friendname" type="text" size="10" maxlength="20" ng-model="configs.appPost.words" ng-change="env.setHello()">
+					<span ng-if="!env.isMyPost()" class="friendname">{{configs.appPost.words}}</span>
+				！</div>
+				<div class="tip">写下你朋友的名字，并分享给TA，赶快行动吧～</div>
+			</div>
+			<div class="loading2" ng-show="!env.accessable" ng-style="{top: configs.scrn.scale*915+'px'}">
+				<span ng-repeat="b in [0,1,2]">{{env.loadingT == b ? '■' : '□'}}</span>
+			</div>
+			<div class="btn" ng-show="env.accessable" ng-style="{top: configs.scrn.scale*950+'px'}">
+				<img src="img/bn-replay.png" ng-if="!env.isMyPost()" ng-click="env.replay()">
+				<img src="img/bn-send.png" ng-if="env.isMyPost()" ng-click="env.trySendHello()">
+			</div>
+		</section>
+		<section class="page-map" ng-show="configs.appPost && env.isMyPost() && configs.appPost.status==2">
+			<div ng-style="{height: 150*configs.scrn.scale+'px'}"></div>
+		    <div id="map" ng-style="{height:(configs.scrn.scale*configs.map.srcH)+'px'}">
+		    	<div class="spot" ng-repeat="spot in env.spots" ng-style="env.getSpotStyle(spot)">
+		    		<div class="inner" ng-style="{'-webkit-animation-name': (($index == 0) ? 'lighting-host' : 'lighting')}"></div>
+	    		</div>
+		    </div>
+		    <div class="detail">
+		    	<p>我的Hello走过了<span class="num-lg">{{env.getMiles()}}</span>{{env.getMilesUnit()}}，</p>
+		    	<p>经过了<span class="num-lg">{{configs.appUser.continents}}</span>大洲<span class="num-lg">{{configs.appUser.countries}}</span>个国家！</p>
+		    </div>
+			<div class="btn" ng-style="{top: configs.scrn.scale*850+'px'}">
+				<img src="img/bn-share.png" ng-click="env.tipShare(true)">
+				<img src="img/bn-play.png" ng-click="env.replay()">
+			</div>
+		</section>
+		<div class="sharetip" ng-show="env.sharetipVisible" ng-click="env.tipShare(false)">
+			<img src="img/share1.png" width="100%" ng-show="configs.appPost && env.isMyPost() && configs.appPost.status==1">
+			<img src="img/share2.png" width="100%" ng-show="configs.appPost && env.isMyPost() && configs.appPost.status==2">
+		</div>
+	</body>
+</html>

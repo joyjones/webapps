@@ -1,0 +1,79 @@
+http://127.0.0.1/skyemedia/1/leader/
+http://127.0.0.1/skyemedia/1/leader/
+
+加入我们
+1.下载链接
+2.信息填写
+微信昵称：
+电子邮箱：
+所在省份：
+所属行业：
+3.微信关注
+
+扫描二维码或搜索微信号
+
+3-1.png
+3-2.png
+3-3.png
+cover.png
+fangkuang1.png
+fangkuang2.png
+form-bg.png
+qr-wx.jpg
+sharetip.png
+submited.jpg
+
+[leader_user]
+id
+nickname
+email
+province
+Industry
+lcd
+ip
+
+[leader_user_event]
+id
+uid
+type	[join,signup,share_click,shared_wx,down_iphone,down_android,rule]
+count	1
+lcd	crrent_time
+
+
+CREATE TABLE  `app_skyemedia`.`leader_user` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`nickname` VARCHAR( 255 ) NOT NULL ,
+`email` VARCHAR( 200 ) NOT NULL ,
+`province` VARCHAR( 50 ) NOT NULL ,
+`Industry` VARCHAR( 20 ) NOT NULL ,
+`ip` VARCHAR( 100 ) NOT NULL ,
+`lcd` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE = MYISAM ;
+
+CREATE TABLE  `app_skyemedia`.`leader_user_event` (
+`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`uid` INT NOT NULL ,
+`type` VARCHAR( 20 ) NOT NULL ,
+`count` INT NOT NULL DEFAULT  '1',
+`lcd` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE = MYISAM ;
+
+
+        <div id="sharetip"></div>
+$('#sharetip').show();
+#sharetip{
+	display: none;
+}
+	        $('#sharetip')
+	        .css({
+				position: 'absolute',
+				'background-image': 'url(images/sharetip.png)',
+				'background-size': '100%',
+				left: 0,
+				top: 0,
+				width: $(window).width(),
+				height: $(window).height(),
+				'z-index': 250,
+	        }).on('vclick', function(){
+				$(this).hide();
+	        }).hide();

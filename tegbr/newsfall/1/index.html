@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>2分钟看人工智能对职业的颠覆</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/lib/swiper/css/animate.min.css">
+    <link rel="stylesheet" href="index.css?v=2">
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/1_4.png" class="ln ani" style="margin-right:12%;margin-top:30%;width:80%;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                <img src="img/1_3.png" class="ln ani" style="margin-top:1em;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+                <div class="ln">
+                    <img src="img/1_2.png" width="40%" class="ani" style="vertical-align:top;margin-top:2em;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.4s">
+                    <img src="img/1_1.png" width="40%" class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.4s">
+                </div>
+                <div class="arrow"><img src="../img/arrowup.png" width="8%"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="ln" style="padding-top:20%;">
+                    <img src="img/2_1.png" width="20%" class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                    <img src="img/2_2.png" width="70%" class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                </div>
+                <img src="img/2_3.png" class="ln ani" style="margin-top: 0.8em;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                <img src="img/2_4.png" class="ln ani" style="margin-top: 0.8em;" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="2s">
+                <img src="img/2_5.png" class="ln ani" style="margin-top: 0.8em;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                <img src="img/2_6.png" class="ln ani" style="margin-top: 0.8em;" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="4s">
+                <div class="arrow"><img src="../img/arrowup.png" width="8%"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/3_1.png" class="ln ani" style="margin-top:20%;" swiper-animate-effect="zoomInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                <img src="img/3_2.png?v=2" class="ln ani" style="width:36%;margin-right:60%;margin-top:1em;" swiper-animate-effect="flipInX" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+                <img src="img/3_3.png" class="ln ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                <div class="arrow"><img src="../img/arrowup.png" width="8%"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/4_1.png" class="ln ani" style="width:36%;margin-right:60%;margin-top:20%;" swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="0s">
+                <img src="img/4_2.png" class="ln ani" style="width:65%;margin-right:30%;margin-top:1em;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+                <img src="img/4_3.png" class="ln ani" style="margin-top:1em;" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                <img src="img/4_4.png" class="ln ani" swiper-animate-effect="rollIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s">
+                <div class="arrow"><img src="../img/arrowup.png" width="8%"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/5_1.png" class="ln ani" style="margin-top:30%;" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                <img src="img/5_2.png" class="ln ani" style="margin-top:8%;" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+                <img src="img/5_3.png?v=1" class="ln ani" style="width:90%;margin-top:1em;" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                <div class="ln" style="margin-top:1em;">
+                    <img src="img/download_ios.png" class="ln ani" style="width:45%" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="1.2s" onclick="clickDownload(0)">
+                    <img src="img/download_android.png" class="ln ani" style="width:45%" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="1.2s" onclick="clickDownload(1)">
+                </div>
+                <img src="img/share.jpg" class="ln ani" style="width:90%;margin-top:0.8em;" swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="1.6s" onclick="clickShare()">
+            </div>
+        </div>
+    </div>
+    <div id="sharetip"></div>
+    <div id="downtip"></div>
+    <div id="blank"></div>
+
+    <script src="/lib/swiper/js/swiper.min.js"></script>
+    <script src="/lib/swiper/js/swiper.animate1.0.2.min.js"></script>
+    <script src="/lib/zepto/zepto.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="/lib/weixin.js"></script>
+    <script src="index.js?_dc=dmfklt"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="burton">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>一起横行一起扭，2015 BURTON GIRL！</title>
+		<link href="css/gallery.css?_dc=1505263333" rel="stylesheet" />
+		<script src="../lib/jquery/jquery-2.1.0.min.js"></script>
+		<script src="../lib/jquery/jquery.easing.min.js"></script>
+		<script src="../lib/angularjs/angular.min.js"></script>
+		<script src="../lib/jweixin-1.0.0.js"></script>
+		<script src="js/weixin.js?_dc=1505262141"></script>
+		<script src="js/gallery.js?_dc=2515262222"></script>
+	</head>
+	<body ng-controller="EnvController as env">
+		<div class="bar">
+			<img class="home" src="img/home.png" ng-click="env.backHome()">
+			<img class="tab" ng-src="img/tab-{{configs.mode == 1 ? 'hot' : 'new'}}.png" ng-click=env.clickTab($event)>
+		</div>
+		<div class="view">
+			<div class="post" ng-repeat="post in configs.datas" ng-style="{
+				width: configs.post.size +'px', 
+				height: configs.post.size +'px',
+				padding: configs.post.padding + 'px'
+			}">
+				<img ng-src="{{configs.qnurl + post.imgurl}}?imageMogr2/auto-orient&imageView2/1/w/{{configs.post.size}}/h/{{configs.post.size}}/interlace/1" ng-click="env.enterPost(post.id)">
+			</div>
+	</body>
+	<script type="text/javascript">
+		if (/iPhone/.test(navigator.userAgent))
+			$('body').css('font-family', 'Heiti SC');
+	</script>
+</html>

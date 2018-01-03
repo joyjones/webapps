@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BEHR</title>
+
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css?_dc=aaaaabbbb">
+  <script src="../lib/jquery/jquery-2.1.0.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../lib/ko/knockout-3.2.0.js"></script>
+  <script src="http://api.map.baidu.com/api?v=2.0&ak=53c2732adad38dc72e69bfb0ccaaa714"></script>
+  <script src="../lib/vmouse.js?_dc=aaaaaaaaa"></script>
+  <script src="../lib/jweixin-1.0.0.js"></script>
+  <script src="../lib/defines.js"></script>
+  <script src="js/app.js?_dc=uxkbdemr"></script>
+  <script src="js/map.js?_dc=bgxscrma"></script>
+
+  <style type="text/css">
+    body {margin: 0;padding: 0;}
+    .grayback {background-color: #eee;}
+  </style>
+</head>
+<body>
+  <div id="map_canvas" data-bind="style: {width: vars.scrsize().w + 'px', height: (vars.scrsize().h * 0.5) + 'px'}"></div>
+
+  <div class="list-group" style="overflow:auto;" data-bind="style: {height: (vars.scrsize().h * 0.5) + 'px'}">
+    <div data-bind="template: {
+                        name: 'tpl_shop',
+                        foreach: shops
+                    }"></div>
+  </div>
+
+  <script id="tpl_shop" type="text/html">
+    <a href="#" class="list-group-item" data-bind="event: {vclick: env.evts.clickShop}, css: {grayback: env.vars.activeShopIdx() == id}">
+      <span class="badge" data-bind="visible: env.vars.activeShopIdx() == id,
+                                     text: '√'">
+      </span>
+      <h5 class="list-group-item-heading" style="font-weight:bold;" data-bind="text: name"></h5>
+      <p class="list-group-item-text" data-bind="text: addr"></p>
+      <p class="list-group-item-text" data-bind="text: phone"></p>
+    </a>
+  </script>
+</body>
+</html>

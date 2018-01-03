@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>百色熊俱乐部</title>
+
+  <link rel="stylesheet" href="css/main.css?_dc=eeefzadc">
+  <script src="../lib/jquery/jquery-2.1.0.min.js"></script>
+  <script src="../lib/vmouse.js?_dc=aaaaaaaaa"></script>
+  <script src="../lib/jweixin-1.0.0.js"></script>
+  <script src="../lib/defines.js"></script>
+  <script src="js/weixin.js?_dc=h2k4lkm5"></script>
+  <script src="js/main.js?_dc=ep8aub23"></script>
+  <style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: '微软雅黑';
+    }
+    section{
+      display: none;
+    }
+    .form{
+      position: absolute;
+      top: 0;
+      margin-top: 32%;
+      color: #fff;
+      width: 100%;
+    }
+    .form input{
+      color: #fff;
+      font-size: 1.1em;
+      background-color: #2C2A29;
+      border: 1px solid #201D1C;
+    }
+    .form p{
+      margin: 8px;
+    }
+    .sharetip, .downtip{
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      display: none;
+    }
+    .sharetip{
+      background-image: url(images/sharetip.png);
+    }
+    .downtip{
+      background-image: url(images/downtip.png);
+    }
+    .row{
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      margin: 2px 0;
+    }
+    .row .field{
+      width: 30%;
+      text-align: right;
+      float: left;
+      height: 100%;
+    }
+    .row .value{
+      width: 60%;
+      float: left;
+    }
+    .row input.value{
+      width: 100%;
+      height: 100%;
+    }
+    .back{
+      position: absolute;
+    }
+    section.act1{
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+    section.act1.page1{
+      background-image: url(images/act1-a.jpg);
+    }
+    section.act1.page2{
+      background-image: url(images/act1-b.jpg);
+    }
+    section.act1 img.bn{
+      position: absolute;
+      width: 50%;
+      left: 25%;
+    }
+    section.act1.page1 img.bn.register{
+      top: 76%;
+    }
+    section.act1.page1 img.bn.rule{
+      top: 85%;
+    }
+    section.act1.page2 img.bn.register{
+      top: 78%;
+    }
+    section.act1.page2 img.bn.back{
+      top: 87%;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <img src="images/1.jpg?_dc=abci444" width="100%" style="vertical-align: bottom;">
+    <img id="act1" src="images/act1.jpg" style="position: absolute;right:0;top:83%;" width="100%">
+  </section>
+  <section>
+    <img src="images/2.jpg?_dc=oppor7" width="100%" style="vertical-align: bottom;">
+  </section>
+  <section>
+    <img src="images/3.jpg" width="100%" style="vertical-align: bottom;">
+  </section>
+  <section>
+    <img src="images/4.jpg" width="100%" style="vertical-align: bottom;">
+  </section>
+  <section style="background-color:#413c38;">
+    <img src="images/5.jpg?_dc=oe53zzm" width="100%" style="vertical-align: bottom;">
+    <div class="form">
+      <div class="row">
+        <div class="field">
+          <label for="fullname">*姓名：</label>
+        </div>
+        <div class="value">
+          <input type="text" id="fullname">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="cellphone">*手机号码：</label>
+        </div>
+        <div class="value">
+          <input type="text" id="cellphone">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="email">*邮箱：</label>
+        </div>
+        <div class="value">
+          <input type="text" id="email">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="province">*所在城市：</label>
+        </div>
+        <div class="value">
+          <select id="province">
+            <option value="-1">请选择..</option>
+          </select>
+          <select id="city" disabled="disabled">
+          </select>
+        </div>
+      </div><br>
+      <div class="row">
+        <label style="margin-left:5%;">是否曾购买百色熊产品：</label>
+      </div>
+      <div class="row">
+        <div class="field"></div>
+        <div class="value">
+          <input type="radio" name="bought" id="bought1" value="1">
+          <label for="bought1">是</label>
+          <input type="radio" name="bought" id="bought2" value="-1">
+          <label for="bought2">否</label>
+        </div>
+      </div>
+      <div class="row">
+        <label style="margin-left:5%;">计划何时装修：</label>
+      </div>
+      <div class="row">
+        <div class="field"></div>
+        <div class="value">
+          <select id="decorateDate">
+            <option value="未选择">请选择..</option>
+            <option value="一个月内">一个月内</option>
+            <option value="未选择">三个月内</option>
+            <option value="半年内">半年内</option>
+            <option value="半年后">半年后</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="code">活动代码：</label>
+        </div>
+        <div class="value">
+          <input type="text" id="code">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <img src="images/6.jpg" width="100%" style="vertical-align: bottom;">
+  </section>
+  <section>
+    <img src="images/7.jpg?_dc=km34lmk" width="100%" style="vertical-align: bottom;">
+  </section>
+  <section class="act1 page1">
+    <img class="bn register" src="images/bn-register.png">
+    <img class="bn rule" src="images/bn-rule.png">
+  </section>
+  <section class="act1 page2">
+    <img class="bn register" src="images/bn-register.png">
+    <img class="bn back" src="images/bn-back.png">
+  </section>
+  <div class="sharetip"></div>
+  <div class="downtip"></div>
+</body>
+</html>

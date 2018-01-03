@@ -1,0 +1,73 @@
+html, body {
+	position: relative;
+	height: 100%;
+}
+body {
+	font-family: 'Heiti SC','微软雅黑','黑体';
+	margin: 0;
+	padding: 0;
+	background: #fff url(../img/logo.png) no-repeat top left;
+	background-size: 40%;
+	background-position: 8px 8px;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	background: transparent;
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 90%;
+}
+.ln{
+	width: 100%;
+}
+.arrow{
+	position: absolute;
+	bottom: 1em;
+	width: 90%;
+	text-align: center;
+	-webkit-animation-name: blending;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+@-webkit-keyframes blending{
+	0% {opacity: 0.2;}
+	50% {opacity: 1;}
+	100% {opacity: 0.2;}
+}
+#sharetip, #downtip{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#sharetip{
+	background-image: url(../img/sharetip.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	z-index: 1000;
+}
+#downtip{
+	background-image: url(../img/downtip.png?v=1);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	z-index: 999;
+}
+#blank{
+	background-color: #fff;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}

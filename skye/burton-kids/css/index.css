@@ -1,0 +1,87 @@
+html, body {
+	position: relative;
+	height: 100%;
+}
+body {
+	font-family: 'Heiti SC','微软雅黑','黑体';
+	margin: 0;
+	padding: 0;
+	background-image: url(../img/1.jpg);
+	background-size: 100%;
+	background-repeat: repeat;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	width: 100%;
+}
+.arrow-u, .arrow-d{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	-webkit-animation-name: blending;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+	z-index: 900;
+}
+.arrow-u{
+	bottom: 1em;
+}
+.arrow-d{
+	top: 1em;
+}
+@-webkit-keyframes blending{
+	0% {opacity: 0.2;}
+	50% {opacity: 1;}
+	100% {opacity: 0.2;}
+}
+img.page {
+	width: 100%;
+}
+.door{
+	position: absolute;
+	width: 100%;
+	font-size: 0;
+	display: none;
+}
+.info{
+	text-align: center;
+}
+.info .open{
+	position: absolute;
+	top: 3%;
+	right: -1%;
+	-webkit-animation-name: scaling;
+	-webkit-animation-duration: 1.2s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+	z-index: 901;
+}
+@-webkit-keyframes scaling{
+	0% {width: 35%; top: 3%;}
+	50% {width: 38%; top: 2.5%;}
+	100% {width: 35%; top: 3%;}
+}
+.info .dlg{
+	display: none;
+	position: absolute;
+	top: 20%;
+	width: 80%;
+	left: 10%;
+	z-index: 901;
+}
+.info .dlg .close{
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}

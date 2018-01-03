@@ -1,0 +1,58 @@
+body{
+	margin: 0;
+	padding: 20px 8%;
+	font-family: '微软雅黑';
+}
+#container{
+	width: 100%;
+	/*font-size: 0;*/
+}
+#pickfiles{
+	border: 2px solid #02a48d;
+	width: 99%;
+}
+#photo{
+	vertical-align: bottom;
+}
+input{
+	line-height: 20px;
+	height: 20px;
+	font-size: 1em;
+  	border: none;
+	border-bottom: 2px solid #02a48d;
+}
+input::-webkit-input-placeholder {
+    color: #02a48d;
+}
+.inputarea{
+	margin-top: 20px;
+	font-size: 1.1em;
+}
+.inputln{
+	width: 100%;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#progress-body{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 8px;
+	background-color: #ccc;
+}
+#progress{
+	width: 0%;
+	height: 100%;
+	background-color: #080;
+}
+.tool{
+	position: absolute;
+	display: none;
+	z-index: 999;
+}
+.tool.rotate {left: -20px; top: -20px;}
+.tool.clear {left: -20px; bottom: -20px;}
+.tool.commit {right: -20px; bottom: -20px;}
+.tool.tpl-prev {left: 2px; top: 45%; width: 10%;}
+.tool.tpl-next {right: 2px; top: 45%; width: 10%;}

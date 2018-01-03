@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>BURTON雪季小模特招募</title>
+		<link href="css/templates.css?_dc=1505261141" rel="stylesheet" />
+		<link href="css/post.css?_dc=aaab" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="bar">
+			<img class="gallery" src="img/8-gallery.png" width="27%">
+			<img class="focus" src="img/8-focus.png" width="30%">
+			<img class="share" src="img/share.png" width="10%">
+			<div class="praise">
+				<span></span>
+			</div>
+			<img class="votetip" src="img/8-votetip.png" width="10%">
+		</div>
+		<div class="view">
+			<img id="photo" src="" width="100%" onload="app.onPhotoLoaded()">
+        	<div class="plus">
+	            <div class="ln plus-backlayer"></div>
+	            <div class="ln plus-burton">我是BURTON KIDS</div>
+	            <div class="ln plus-nameage"></div>
+	            <div class="ln plus-city"></div>
+            </div>
+            <img class="switch prev" src="img/8-prev.png">
+            <img class="switch next" src="img/8-next.png">
+		</div>
+		<!--<div class="sharedlg">
+			<img class="text" src="img/share-tip.png" width="100%">
+			<img class="close" src="img/share-close.png" width="7%">
+		</div>-->
+		<div id="sharetip">
+		</div>
+	</body>
+	<script src="../lib/jquery/jquery-2.1.0.min.js"></script>
+	<script src="../lib/jquery/jquery.easing.min.js"></script>
+	<script src="../lib/vmouse.js"></script>
+	<script src="../lib/jweixin-1.0.0.js"></script>
+	<script src="js/weixin.js?_dc=1505261a41"></script>
+	<script src="js/templates.js?_dc=1505261151"></script>
+	<script src="js/post.js?_dc=1505261145"></script>
+	<script type="text/javascript">
+		if (/iPhone/.test(navigator.userAgent))
+			$('body').css('font-family', 'Heiti SC');
+	</script>
+</html>

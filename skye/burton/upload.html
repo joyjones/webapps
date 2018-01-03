@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>一起横行一起扭，2015 BURTON GIRL！</title>
+		<link href="css/templates.css?_dc=1505261141" rel="stylesheet" />
+		<link href="css/upload.css?_dc=1505261141" rel="stylesheet" />
+		<script src="../lib/zepto/zepto.min.js"></script>
+		<script src="../lib/jweixin-1.0.0.js"></script>
+		<script src="../lib/qiniu/qiniu.min.js"></script>
+		<script src="../lib/plupload/moxie.js"></script>
+		<script src="../lib/plupload/plupload.dev.js"></script>
+		<script src="../lib/plupload/i18n/zh_CN.js"></script>
+		<script src="../lib/qiniu/uploader.js"></script>
+		<script src="js/templates.js?_dc=1505261149"></script>
+		<script src="js/weixin.js?_dc=1505261341"></script>
+		<script src="js/upload.js?_dc=1505261163"></script>
+	</head>
+	<body>
+		<div id="container">
+            <div id="pickfiles">
+				<img id="photo" src="img/7.jpg" width="100%">
+            </div>
+            <div class="plus">
+	            <img class="plus-logo" src="img/7-logo.png">
+	            <div class="plus-burton"><span class="s1">我是&nbsp;</span><span class="s2">BURTON GIRL</span></div>
+	            <div class="plus-name"></div>
+	            <div class="plus-words"><span class="s1">有种横行就爱&nbsp;</span><span class="s2"></span></div>
+            </div>
+
+	    	<!-- <img class="tool rotate" src="img/7-rotate.png" width="20%" onclick="maker.rotate()"> -->
+	    	<img class="tool clear" src="img/7-clear.png" width="20%" onclick="maker.reset()">
+	    	<img class="tool commit" src="img/7-ok.png" width="20%" onclick="maker.commit()">
+	    	<div class="tool tpl-prev">
+	    		<img src="img/7-left.png" width="100%" onclick="maker.updateTemplate(true, -1)">
+	    	</div>
+	    	<div class="tool tpl-next">
+	    		<img src="img/7-right.png" width="100%" onclick="maker.updateTemplate(true, 1)">
+	    	</div>
+        </div>
+        <div id="progress-body">
+            <div id="progress"></div>
+        </div>
+        <div class="inputarea">
+	        <div class="inputln">
+		        <input id="nickname" type="text" placeholder="点击输入你的昵称">
+	        </div>
+	        <div class="inputln">
+		        有种横行就爱&nbsp;<input id="words" type="text" placeholder="你的态度" size="8" maxlength="8">
+	        </div>
+        </div>
+	</body>
+	<script type="text/javascript">
+		if (/iPhone/.test(navigator.userAgent))
+			$('body').css('font-family', 'Heiti SC');
+	</script>
+</html>

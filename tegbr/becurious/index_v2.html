@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>智趣问答 考考你的商业头脑</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css?_dc=rfml5mki">
+		<script src="../lib/jquery/jquery-2.1.0.min.js"></script>
+		<script src="../lib/jweixin-1.0.0.js"></script>
+		<script src="../lib/vmouse.js"></script>
+		<script src="js/weixin.js?_dc=abzkd7a"></script>
+		<script src="js/questions.js?_dc=cbzkc93"></script>
+		<script src="js/index_v2.js?_dc=fezddf4"></script>
+	</head>
+	<body>
+		<section class="face">
+			<img class="logoc" src="img/logoc.jpg">
+			<div class="title">
+				<p style="-webkit-margin-before: 0.2em;">智趣问答</p>
+				<p>——考考你的商业头脑</p>
+			</div>
+			<div class="desc">
+			你是否具有全球视野呢？下载《经济学人·全球商业评论》App，阅读文章参与答题，一起来测测你的商业头脑。答对超过60%问题即可进入《经济学人·全球商业评论》排行榜，成为抽奖备选人。精彩礼品等你拿！
+			</div>
+			<div class="line">
+				<img class="dnbtn android" src="img/bn_down_android.png">
+			</div>
+			<div class="line">
+				<img class="dnbtn ios" src="img/bn_down_ios.png">
+			</div>
+			<div class="bluebar">
+				<div><input type="checkbox" id="everdown"><label for="everdown">我已经下载APP</label></div>
+				<img class="start" src="img/bn_start.png">
+			</div>
+		</section>
+		<section class="download">
+			<div class="blueback"></div>
+			<div class="line">
+				<img class="logo" src="img/logob.jpg">
+			</div>
+			<div class="line">
+				<img class="dnbtn android" src="img/bn_down_android.png">
+			</div>
+			<div class="line">
+				<img class="dnbtn ios" src="img/bn_down_ios.png">
+			</div>
+			<img class="start" src="img/bn_start.png">
+		</section>
+		<section class="main">
+			<div class="content">
+				<img class="logoc" src="img/logoc.jpg">
+				<div class="q"></div>
+				<div class="a">
+					<div class="issue" index="0"></div>
+					<div class="issue" index="1"></div>
+					<div class="issue" index="2"></div>
+					<div class="issue" index="3"></div>
+				</div>
+			</div>
+			<div class="bluebar">
+				<div class="progress-body">
+					<div class="progress"></div>
+				</div>
+				<div class="progress-label">0/10</div>
+				<img class="confirm" src="img/bn_confirm.png">
+			</div>
+			<div class="rbox correct">
+				<img src="img/r_correct.png">
+				<div class="text">回答正确！</div>
+			</div>
+			<div class="rbox wrong">
+				<img src="img/r_wrong.png">
+				<div class="text">回答错误！</div>
+			</div>
+		</section>
+		<section class="result">
+			<div class="content">
+				<img class="logoc" src="img/logoc.jpg">
+				<div class="detail">
+					<canvas id="score"></canvas>
+					<div class="title"></div>
+					<div class="desc"></div>
+				</div>
+				<div class="ranktitle">《经济学人·全球商业评论》排行榜</div>
+				<ul id="ranklist">
+				</ul>
+			</div>
+			<div class="bluebar">
+				<div class="barl">
+					<img class="download" src="img/bn_down.png">
+				</div>
+				<div class="barr">
+					<img class="share" src="img/bn_share.png">
+				</div>
+			</div>
+		</section>
+		<div id="sharetip"></div>
+		<div id="downtip"></div>
+		<section class="browser">
+			<img src="img/intro.jpg" width="100%">
+		</section>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: '微软雅黑';
+    background-image: url(../images/bg.jpg?v=2);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(5,33,47);
+    overflow-x: hidden;
+}
+section{
+    display: none;
+}
+section.face{
+    display: block;
+    background-image: url(../images/face.jpg);
+    background-size: 100%;
+}
+section.face .content{
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    text-align: center;
+}
+section.face .content img{
+    width: 50%;
+    margin-bottom: 8px;
+}
+section.about{
+    text-align: center;
+}
+section.about .surface{
+    margin-top: 35%;
+}
+section.about .btns img.back{
+    display: none;
+}
+section.about .btns img{
+    width: 30%;
+}
+section.game .qa{
+    width: 100%;
+}
+section.game .bns, section.answers .bns{
+    width: 100%;
+    text-align: center;
+    padding-top: 2%;
+    padding-left: 12%;
+    display: table;
+}
+section.game .bns img, section.answers .bns img{
+    height: 3em;
+    float: left;
+    margin: auto 14px;
+}
+section.game .qa{
+    display: none;
+}
+section.game .qa img{
+    width: 100%;
+}
+section.game .qa img.pic{
+    width: 80%;
+    margin-left: 15%;
+}
+section.game .qa .q{
+    margin-top: 37%;
+    font-size: 0;
+}
+section.game .qa .as{
+    display: table;
+    background-color: rgba(250, 255, 220, 0.47);
+    padding-left: 10%;
+    width: 90%;
+}
+section.game .qa img.a{
+    width: 46%;
+    padding: 2%;
+    float: left;
+}
+section.game .qa.qa4 img.a{
+    width: 92%;
+    float: left;
+    height: auto !important;
+}
+section.result .words{
+    width: 100%;
+    padding-top: 37%;
+    margin-bottom: 4%;
+}
+section.result .words img{
+    width: 100%;
+}
+section.result .btns{
+    width: 100%;
+    text-align: center;
+}
+section.result .btns img{
+    width: 55%;
+    margin-bottom: 8px;
+}
+section.result .opts{
+    position: absolute;
+    top: 47%;
+    padding-left: 15%;
+}
+section.result .opts img{
+    float: left;
+    width: 34%;
+    margin: 0 4%;
+}
+#sharetip{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/share.png);
+    background-size: 100%;
+    z-index: 1000;
+    display: none;
+}
+section.answers .content{
+    padding-top: 37%;
+    width: 100%;
+}
