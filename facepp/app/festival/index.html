@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>明星给您拜年啦！</title>
+		<link href="css/index.css?_dc=00000009" rel="stylesheet" />
+		<script type="text/javascript">var _czc = _czc || [];_czc.push(["_setAccount", "1257423508"]);</script>
+	</head>
+	<body>
+		<section class="loading">
+			<div class="text">祝福加载中……</div>
+		</section>
+		<section class="cover">
+			<img class="title" data-bind="attr: {src: 'img/title' + cover.titleImageIndex() + '.png'}" width="100%">
+			<canvas class="view" data-bind="click: cover.onclick">
+			</canvas>
+			<div class="arrows" data-bind="foreach: cover.coveringSlots">
+				<img class="arrow" src="img/arrow-u.png" data-bind="
+					attr: {
+						width: $root.screen.w * 0.08
+					}, style: {
+						left: pos.x() + 'px',
+						top: pos.y() + 'px'
+					}">
+			</div>
+			<img class="caption" src="img/cover-caption.png" width="100%" data-bind="visible: cover.status()==0">
+			<div class="words" data-bind="visible: cover.status()==1">
+				<div class="content" data-bind="text: cover.post() ? cover.post().info.words : ''"></div>
+			</div>
+			<div class="btn copyinfo" data-bind="visible: cover.status()==1, click: cover.showCopyInfo">关于H5</div>
+			<img class="make" src="img/bn-make.png" data-bind="visible: cover.status()==1, click: function(){app.setPage('make')}">
+			<img class="sparks" src="img/spark12.gif" data-bind="visible: cover.status()==1">
+			<audio id="bgmusic" src="img/music-1.mp3" preload="auto" loop="loop">
+				<source type="audio/mp3" src="img/music-1.mp3"/>
+			</audio>
+		</section>
+		<section class="make">
+			<div class="title" data-bind="text: make.title"></div>
+			<div class="groups" data-bind="visible: !make.editingMode(), foreach: app.groups">
+				<div class="bn-group" data-bind="text: $data, click: function(){$root.make.focusGroupIndex($index())}, css: {focus: $root.make.focusGroupIndex()==$index()}"></div>
+			</div>
+			<div class="preview">
+				<canvas class="view" data-bind="click: make.preview.onclick">
+				</canvas>
+ 			</div>
+			<div class="name" data-bind="text: make.focusPattern() ? make.focusPattern().name : '', visible: !make.editingMode()"></div>
+			<div class="buttons buttons-select" data-bind="visible: !make.editingMode()">
+				<img class="bn bn-l pattern-prev" data-bind="click: function(){make.changePattern(-1)}" src="img/bn-prev.png">
+				<img class="bn bn-m pattern-select" data-bind="click: make.selectPattern" src="img/bn-selpat.png">
+				<img class="bn bn-r pattern-next" data-bind="click: function(){make.changePattern(1)}" src="img/bn-next.png">
+			</div>
+			<div class="words" data-bind="visible: make.editingMode(), click: make.clickWords">
+				<div class="content" data-bind="text: make.displayUserWords"></div>
+			</div>
+			<div class="buttons buttons-edit" data-bind="visible: make.editingMode()">
+				<img class="bn bn-l pattern-cancel" data-bind="click: make.cancelPattern" src="img/bn-back.png">
+				<img class="bn bn-m pattern-submit" data-bind="click: make.submit" src="img/bn-submit.png">
+				<img class="bn bn-r pattern-clear" data-bind="click: make.clearPattern" src="img/bn-reset.png">
+			</div>
+		</section>
+		<section class="photo">
+			<div class="title" data-bind="text: make.photo.title"></div>
+			<div class="outview">
+				<canvas class="view" data-bind="event: {
+							click: make.photo.onclick,
+							vmousedown: make.photo.ontouch,
+							vmousemove: make.photo.ondragging,
+							vmouseup: make.photo.ontouchend,
+						}">
+				</canvas>
+			</div>
+			<div class="buttons">
+				<img class="bn change" data-bind="click: make.preview.takePhoto" src="img/bn-browse.png">
+				<img class="bn confirm" src="img/bn-selface.png" data-bind="
+						css: {'btn-disabled': make.photo.selectFaceIndex() < 0},
+						text: make.photo.selectFaceIndex() < 0 ? '请选择头像' : '就用这个头像！',
+						click: make.photo.confirm">
+				<img class="bn cancel" data-bind="click: make.photo.cancel" src="img/bn-cancel.png">
+			</div>
+		</section>
+		<div id="screentip" data-bind="visible: screen.tip.visible">
+			<div class="mask"></div>
+			<div class="content" data-bind="text: screen.tip.text"></div>
+		</div>
+		<img id="sharetip" data-bind="visible: app.sharetip.visible, attr: {src: 'img/sharetip.png'}">
+		<div style="display:none;">
+			<script src="http://s11.cnzz.com/z_stat.php?id=1257423508&web_id=1257423508" language="JavaScript"></script>
+		</div>
+	</body>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/fungames/dep/knockout-3.4.0.js"></script>
+	<script src="/fungames/dep/vmouse.js"></script>
+	<script src="/fungames/dep/jweixin-1.0.0.js"></script>
+	<script src="/fungames/dep/facepp-sdk.min.js"></script>
+	<script src="/fungames/dep/weixin.js?_dc=00000011"></script>
+	<script src="js/configs.js?_dc=00000008"></script>
+	<script src="js/index.js?_dc=00000044"></script>
+</html>

@@ -1,0 +1,231 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+	background-image: url(../img/bg.jpg);
+	background-repeat: repeat;
+	background-color: #e9262a;
+	color: #fff;
+}
+.btn{
+	padding: 8px;
+	border: 1px solid #000;
+	border-radius: 4px;
+	text-align: center;
+}
+.btn-disabled{
+	color: #ccc;
+}
+section{
+	display: none;
+}
+section.loading{
+	color: #fff;
+	display: block;
+}
+section.loading .text{
+	position: absolute;
+	width: 100%;
+	top: 40%;
+	left: 0;
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+section.cover .title{
+}
+section.cover canvas.view{
+	margin-left: 5%;
+}
+section.cover .caption{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #FFE562;
+	margin-top: 15px;
+	-webkit-animation-name: fontscaling;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+section.cover .arrows{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+section.cover .arrows img.arrow{
+	position: absolute;
+	-webkit-animation-name: updown;
+	-webkit-animation-duration: 0.5s;
+	/*-webkit-animation-timing-function: ease-in-out;*/
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+	z-index: 10;
+}
+@-webkit-keyframes updown{
+	0% {margin-top: 0px;}
+	50% {margin-top: 20px;}
+	100% {margin-top: 30px;}
+}
+@-webkit-keyframes fontscaling{
+	0% {width: 100%; margin-left: 0;}
+	100% {width: 90%; margin-left: 5%;}
+}
+section.cover .words{
+	width: 96%;
+	border: 2% solid #FFE562;
+}
+section.cover .btn.copyinfo{
+	float: left;
+    color: #CF0;
+    margin-left: 5%;
+    background-color: rgba(107, 206, 46, 0.2);
+    border: 1px solid #3FFF00;
+    margin-top: 2px;
+    font-size: 0.8em;
+}
+section.cover img.make{
+	width: 30%;
+	float: right;
+	margin-right: 5%;
+}
+section.cover img.sparks{
+	position: absolute;
+	top: 0;
+	left: 20%;
+	width: 60%;
+}
+section.cover .words, section.make .words{
+    width: 94%;
+    margin-left: 3%;
+    max-height: 90px;
+    color: #fff;
+    font-weight: bold;
+    background-image: url(../img/frame-words.png);
+    background-size: 100% 100%;
+    text-align: center;
+    font-size: 1.2em;
+    overflow: hidden;
+    display: table;
+}
+section.cover .words .content, section.make .words .content{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 5%;
+    max-height: 90px;
+}
+section.make .title, section.photo .title{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+    font-size: 1em;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 4px solid #FEE361;
+    border-radius: 24px;
+}
+section.make .name{
+	width: 100%;
+	text-align: center;
+	margin-top: 6px;
+	margin-bottom: 10px;
+}
+section.make .preview{
+	width: 100%;
+}
+section.make canvas.view{
+	margin-left: 5%;
+}
+section.make .buttons{
+	display: table;
+	width: 100%;
+}
+section.make .buttons .bn{
+	float: left;
+}
+section.make .buttons .bn-l, section.make .buttons .bn-r{
+	width: 20%;
+}
+section.make .buttons .bn-r{
+	float: right;
+}
+section.make .buttons .bn-m{
+	width: 40%;
+	margin-left: 10%;
+}
+section.make .groups{
+    width: 100%;
+    padding-left: 5%;
+}
+section.make .groups .bn-group{
+    float: left;
+    width: 15%;
+    border: 2px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+.bn-group.focus{
+    background-color: #FFE562;
+    color: #000;
+}
+section.photo .outview{
+	width: 100%;
+	background-color: rgba(0,0,0,0.1);
+	margin-bottom: 10px;
+}
+section.photo canvas.view{
+	border: 4px solid #fff;
+}
+section.photo .buttons{
+	display: table;
+	width: 100%;
+}
+section.photo .buttons .bn{
+	float: left;
+}
+section.photo .buttons .bn.change, section.photo .buttons .bn.cancel{
+	width: 20%;
+}
+section.photo .buttons .bn.confirm{
+	width: 40%;
+	margin-left: 10%;
+}
+section.photo .buttons .bn.cancel{
+	float: right;
+}
+#screentip{
+	z-index: 100;
+}
+#screentip, #screentip .mask{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+#screentip .mask{
+	background-color: rgba(0,0,0,0.8);
+}
+#screentip .content{
+	position: fixed;
+	margin-top: 50%;
+	color: #fff;
+	width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#sharetip{
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 900;
+}
